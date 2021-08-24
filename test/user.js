@@ -7,7 +7,7 @@ describe('User Api Testing ', () => {
     it('should create a user',  (done) => {
         request(app)
         .post('/api/user')
-        .send({email: 'asdasdasdasd@gmail.com', password: 'yahhooo12344'})
+        .send({email: 'test26@gmail.com', password: 'yahhooo12344'})
         .set('protect_key', '05c1f0534de526c320bc883af19e0d0b')
         .expect(200)
         .end((err, res) => {
