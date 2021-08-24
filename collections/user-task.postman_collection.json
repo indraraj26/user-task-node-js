@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "a94f6b98-b8fd-4292-8953-cd1ef944aa29",
+		"name": "user-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create a user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "protect_key",
+								"value": "05c1f0534de526c320bc883af19e0d0b",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"lol@gmail.com\",\r\n    \"password\": \"indra12323424\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "protect_key",
+								"value": "05c1f0534de526c320bc883af19e0d0b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user?id=612502d0fdd4f5132cafd9a1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "612502d0fdd4f5132cafd9a1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"lol@gmail.com\",\r\n    \"password\": \"indra12323424\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "task",
+			"item": [
+				{
+					"name": "create a task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI1MTAyMTQzNDgxYjI0Njg3OWZiOWYiLCJpYXQiOjE2Mjk4MTg5MTksImV4cCI6MTYyOTkwNTMxOX0.Fj90YZwiOUbOETrXyCm0c_m4r7DFyX6ZpYpoDQlMs54",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\": \"asdsad\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/task",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all task",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI1MDMyMzRhOWI4ZTBhMmMyMjQ2NjUiLCJpYXQiOjE2Mjk4MTcyNzYsImV4cCI6MTYyOTkwMzY3Nn0.6_sjg0CkMIIpvZaeZSWVQSU_LBWS5sOLDgDUsLWNBRs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/task",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a task",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI1MDMyMzRhOWI4ZTBhMmMyMjQ2NjUiLCJpYXQiOjE2Mjk4MTcyNzYsImV4cCI6MTYyOTkwMzY3Nn0.6_sjg0CkMIIpvZaeZSWVQSU_LBWS5sOLDgDUsLWNBRs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/task?id=61250cd774eedb0b4cc04364",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "61250cd774eedb0b4cc04364"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all task by user id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI1MDMyMzRhOWI4ZTBhMmMyMjQ2NjUiLCJpYXQiOjE2Mjk4MTcyNzYsImV4cCI6MTYyOTkwMzY3Nn0.6_sjg0CkMIIpvZaeZSWVQSU_LBWS5sOLDgDUsLWNBRs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/task/6125102143481b246879fb9f",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task",
+								"6125102143481b246879fb9f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

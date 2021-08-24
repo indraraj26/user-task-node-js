@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"user-task.tasks"}],"uuid":"cb47d499bc004693a846ce3db90847cf"}
