@@ -7,11 +7,11 @@ exports.createUser = async (req, res) => {
     }
     const user = new User(req.body);
     await user.save();
-    res.json(user);
+    res.json({result: true, ...user});
 }
 
 exports.getAllUser = async (req, res) => {
-     res.json(await User.find());
+     res.json({result: true, list: await User.find()});
 }
 
 exports.deleteUser = async(req, res) => {
@@ -31,5 +31,5 @@ exports.loginUser = async(req, res) => {
         return res.json({result: false, message: 'Password is wrong'})
     }
     const token = User.generateToken({_id: user._id})
-    res.json({token})
+    res.json({result: true, token})
 }

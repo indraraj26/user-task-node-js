@@ -2,7 +2,7 @@ const Task = require('./task.model');
 
 exports.getAllTaskByUserId = async (req, res) => {
     const task = await Task.find({user_id: req.params.userId})
-    res.json(task)
+    res.json({result: true, list: task})
 }
 
 exports.createTask = async (req, res) => {
@@ -12,7 +12,7 @@ exports.createTask = async (req, res) => {
 }
 
 exports.getAllTask = async (req, res) => {
-    res.json(await Task.find())
+    res.json({result: true, list: await Task.find()})
 }
 
 exports.deleteTaskById = async(req, res) => {
