@@ -1,11 +1,9 @@
 const express = require('express');
 require('./db/mongoose');
-const morgan = require('morgan')
 
 const app = express();
 
-app.use(express.json());
-app.use(morgan('dev'))
+require('./src/middleware/app.middleware')(app);
 app.use('/api', require('./src/api.routes'))
 
 app.use(function (err, req, res, next) {

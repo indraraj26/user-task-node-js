@@ -10,8 +10,13 @@ exports.createUser = async (req, res) => {
     res.json({result: true, ...user});
 }
 
+// {{url}}/user?page=1&limit=10
 exports.getAllUser = async (req, res) => {
-     res.json({result: true, list: await User.find()});
+    const page = req.query.page == 1 ? 0 : req.query.page - 1;
+    const skip = Math.max(0, page);
+    const limit = +req.query.limit;
+    const total = await User.find().countDocuments();
+    res.json({result: true, total, list: await User.find().limit(limit).skip(skip * limit)});
 }
 
 exports.deleteUser = async(req, res) => {
